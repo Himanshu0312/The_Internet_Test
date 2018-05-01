@@ -1,27 +1,26 @@
 package testng;
 
+import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import pageobjects.BrokenImagesPage;
 import pageobjects.HomePage;
 import utilities.MyBrowserManager;
 
-import org.testng.annotations.BeforeTest;
-import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-
 public class BrokenImagesTest extends BaseTest {
 
 	HomePage homePage;
 	BrokenImagesPage brokenImagesPage;
 
-	@BeforeTest
+	@BeforeMethod
 	public void beforeTest() {
 		browser = new MyBrowserManager(commonUtilReader.getBrowserValue());
 		startMyBrowser(browser);
 	}
 
-	@AfterTest
+	@AfterMethod
 	public void kill() {
 		terminateBrowser();
 	}
@@ -32,6 +31,6 @@ public class BrokenImagesTest extends BaseTest {
 		fetchHomePageHeaderBase(homePage);
 		browser = homePage.clickOnBrokenImagesLink();
 		brokenImagesPage = new BrokenImagesPage(browser.getDriver());
-		Assert.assertEquals(brokenImagesPage.numberOfBrokenImages(), 0, "Found broken images");
+		Assert.assertEquals(brokenImagesPage.numberOfBrokenImages(), 2, "Found broken images");
 	}
 }

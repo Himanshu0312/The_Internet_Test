@@ -1,8 +1,8 @@
 package testng;
 
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import pageobjects.BasicAuthPage;
@@ -16,13 +16,13 @@ public class BasicAuthTest extends BaseTest {
 
 	String successAuthText = "Congratulations! You must have the proper credentials.";
 
-	@BeforeTest
+	@BeforeMethod
 	public void setup() {
 		browser = new MyBrowserManager(commonUtilReader.getBrowserValue());
 		startMyBrowser(browser);
 	}
 
-	@AfterTest
+	@AfterMethod
 	public void kill() {
 		terminateBrowser();
 	}

@@ -1,8 +1,8 @@
 package testng;
 
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import pageobjects.HomePage;
@@ -13,13 +13,13 @@ public class HomePageTest extends BaseTest {
 	HomePage homePage;
 	String homePageWelcomeText = "Welcome to the-internet";
 	
-	@BeforeTest
+	@BeforeMethod
 	public void setup() {
 		browser = new MyBrowserManager(commonUtilReader.getBrowserValue());
 		startMyBrowser(browser);
 	}
 
-	@AfterTest
+	@AfterMethod
 	public void kill() {
 		terminateBrowser();
 	}
