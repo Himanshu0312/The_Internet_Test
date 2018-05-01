@@ -17,7 +17,7 @@ public class BrokenImagesTest extends BaseTest {
 
 	@BeforeTest
 	public void beforeTest() {
-		browser = new MyBrowserManager("Google Chrome");
+		browser = new MyBrowserManager(commonUtilReader.getBrowserValue());
 		startMyBrowser(browser);
 	}
 

@@ -12,6 +12,7 @@ public class CommonUtilsReader {
 	private static final Logger log = Logger.getLogger(CommonUtilsReader.class);
 	String homePageUrl;
 	String basicAuthUrl;
+	int browserValue;
 
 	public CommonUtilsReader() {
 		FileReader reader;
@@ -21,11 +22,16 @@ public class CommonUtilsReader {
 			p.load(reader);
 			homePageUrl = p.getProperty("HOME_PAGE");
 			basicAuthUrl = p.getProperty("BAISC_AUTH_URL");
+			browserValue = Integer.parseInt(p.getProperty("BROWSER_VALUE"));
 		} catch (FileNotFoundException fnf) {
 			log.error("Can't find bundle" + fnf.getMessage());
 		} catch (IOException io) {
 			log.error("Can't find bundle" + io.getMessage());
 		}
+	}
+
+	public int getBrowserValue() {
+		return browserValue;
 	}
 
 	public String getHomePageUrl() {

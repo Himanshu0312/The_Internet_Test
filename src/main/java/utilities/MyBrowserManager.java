@@ -14,7 +14,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 public class MyBrowserManager {
 
 	private static final Logger log = Logger.getLogger(MyBrowserManager.class);
-	String browserName;
+	int browserValue;
 	ChromePropertyReader chromePropertyReader;
 	EdgePropertyReader edgePropertyReader;
 
@@ -32,8 +32,8 @@ public class MyBrowserManager {
 	public MyBrowserManager() {
 	}
 
-	public MyBrowserManager(String browserName) {
-		this.browserName = browserName;
+	public MyBrowserManager(int browserValue) {
+		this.browserValue = browserValue;
 	}
 
 	public WebDriver getDriver() {
@@ -47,23 +47,23 @@ public class MyBrowserManager {
 	public void initiate() {
 		log.info("Browser Setup initiated..");
 		try {
-			switch (browserName.toLowerCase().replaceAll("\\s+", "")) {
-			case "googlechrome":
+			switch (browserValue) {
+			case 1:
 				chromePropertyReader = new ChromePropertyReader();
 				System.setProperty(chromePropertyReader.propertyName, chromePropertyReader.driverLocation);
-				log.info("Settings " + browserName + " propety..");
-				log.info("Initiating " + browserName + "...");
+				log.info("Settings " + browserValue + " propety..");
+				log.info("Initiating " + browserValue + "...");
 				driver = new ChromeDriver(new ChromeOptions().addArguments(chromePropertyReader.getChromeOptions()));
 				maximize();
 				log.info("Maximize done.");
 				driver.manage().timeouts().implicitlyWait(Wait.LOW.interval(), TimeUnit.SECONDS);
 				break;
 
-			case "edge":
+			case 2:
 				edgePropertyReader = new EdgePropertyReader();
 				System.setProperty(edgePropertyReader.propertyName, edgePropertyReader.driverLocation);
-				log.info("Settings " + browserName + " propety..");
-				log.info("Initiating " + browserName + "...");
+				log.info("Settings " + browserValue + " propety..");
+				log.info("Initiating " + browserValue + "...");
 				driver = new EdgeDriver();
 				maximize();
 				log.info("Maximize done.");

@@ -13,14 +13,13 @@ public class BasicAuthTest extends BaseTest {
 
 	HomePage homePage;
 	BasicAuthPage basicAuthPage;
-	
+
 	String successAuthText = "Congratulations! You must have the proper credentials.";
-	
+
 	@BeforeTest
 	public void setup() {
-		browser = new MyBrowserManager("Google Chrome");
+		browser = new MyBrowserManager(commonUtilReader.getBrowserValue());
 		startMyBrowser(browser);
-		
 	}
 
 	@AfterTest
@@ -30,7 +29,7 @@ public class BasicAuthTest extends BaseTest {
 
 	@Test
 	public void verifyBasicAuthLogin() {
-		homePage=new HomePage(browser.getDriver());
+		homePage = new HomePage(browser.getDriver());
 		fetchHomePageHeaderBase(homePage);
 		browser = homePage.basicAuthLogin();
 		basicAuthPage = new BasicAuthPage(browser.getDriver());

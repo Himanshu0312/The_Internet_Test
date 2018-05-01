@@ -2,11 +2,13 @@ package testng;
 
 import pageobjects.BasicAuthPage;
 import pageobjects.HomePage;
+import utilities.CommonUtilsReader;
 import utilities.MyBrowserManager;
 
 public class BaseTest {
 
 	MyBrowserManager browser;
+	CommonUtilsReader commonUtilReader = new CommonUtilsReader();
 
 	public MyBrowserManager getBrowser() {
 		return browser;

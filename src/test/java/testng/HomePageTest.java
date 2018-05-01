@@ -15,7 +15,7 @@ public class HomePageTest extends BaseTest {
 	
 	@BeforeTest
 	public void setup() {
-		browser = new MyBrowserManager("Google Chrome");
+		browser = new MyBrowserManager(commonUtilReader.getBrowserValue());
 		startMyBrowser(browser);
 	}
 
