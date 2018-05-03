@@ -13,21 +13,37 @@ public class CommonUtilsReader {
 	String homePageUrl;
 	String basicAuthUrl;
 	int browserValue;
+	String screenshotLocation;
 
-	public CommonUtilsReader() {
+	private static CommonUtilsReader commonUtilsReader = null;
+	
+	
+	private CommonUtilsReader() {
 		FileReader reader;
 		try {
 			reader = new FileReader(".\\src\\main\\resources\\propertyfiles\\commonutils.properties");
 			Properties p = new Properties();
 			p.load(reader);
 			homePageUrl = p.getProperty("HOME_PAGE");
-			basicAuthUrl = p.getProperty("BAISC_AUTH_URL");
+			basicAuthUrl = p.getProperty("BASIC_AUTH_URL");
 			browserValue = Integer.parseInt(p.getProperty("BROWSER_VALUE"));
+			screenshotLocation = p.getProperty("SCREENSHOT_SOURCE");
 		} catch (FileNotFoundException fnf) {
 			log.error("Can't find bundle" + fnf.getMessage());
 		} catch (IOException io) {
 			log.error("Can't find bundle" + io.getMessage());
 		}
+	}
+	
+	public static CommonUtilsReader getInstance(){
+        if(commonUtilsReader == null){
+        	commonUtilsReader = new CommonUtilsReader();
+        }
+        return commonUtilsReader;
+    }
+
+	public String getScreenshotLocation() {
+		return screenshotLocation;
 	}
 
 	public int getBrowserValue() {

@@ -13,6 +13,8 @@ public class EdgePropertyReader {
 	String propertyName, driverLocation;
 	Properties p;
 
+	private static EdgePropertyReader edgePropertyReader = null;
+
 	public EdgePropertyReader() {
 		FileReader reader;
 		try {
@@ -26,6 +28,13 @@ public class EdgePropertyReader {
 		} catch (IOException io) {
 			log.error("Can't find bundle" + io.getMessage());
 		}
+	}
+
+	public static EdgePropertyReader getInstance() {
+		if (edgePropertyReader == null) {
+			edgePropertyReader = new EdgePropertyReader();
+		}
+		return edgePropertyReader;
 	}
 
 	public String getPropertyName() {

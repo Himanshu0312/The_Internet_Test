@@ -11,26 +11,27 @@ import utilities.MyBrowserManager;
 
 public class BrokenImagesTest extends BaseTest {
 
-	HomePage homePage;
-	BrokenImagesPage brokenImagesPage;
-
 	@BeforeMethod
 	public void beforeTest() {
-		browser = new MyBrowserManager(commonUtilReader.getBrowserValue());
-		startMyBrowser(browser);
+		browser = new MyBrowserManager(1);
+		browser.initiate();
 	}
 
 	@AfterMethod
 	public void kill() {
-		terminateBrowser();
+		browser.quit();
 	}
 
 	@Test
 	public void verifyBrokenImagaes() {
 		homePage = new HomePage(browser.getDriver());
-		fetchHomePageHeaderBase(homePage);
-		browser = homePage.clickOnBrokenImagesLink();
+		homePage.getHomePage();
+		int acutalCount;
+		homePage.clickOnBrokenImagesLink();
+		setBrowser(homePage.fetchBrowser());
 		brokenImagesPage = new BrokenImagesPage(browser.getDriver());
-		Assert.assertEquals(brokenImagesPage.numberOfBrokenImages(), 2, "Found broken images");
+		acutalCount = brokenImagesPage.numberOfBrokenImages();
+		screenshot(this.getClass().getSimpleName(), Thread.currentThread().getStackTrace()[1].getMethodName());
+		Assert.assertEquals(acutalCount, 2, "Found broken images");
 	}
 }

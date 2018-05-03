@@ -11,28 +11,29 @@ import utilities.MyBrowserManager;
 
 public class BasicAuthTest extends BaseTest {
 
-	HomePage homePage;
-	BasicAuthPage basicAuthPage;
-
-	String successAuthText = "Congratulations! You must have the proper credentials.";
-
 	@BeforeMethod
 	public void setup() {
-		browser = new MyBrowserManager(commonUtilReader.getBrowserValue());
-		startMyBrowser(browser);
+		browser = new MyBrowserManager(1);
+		browser.initiate();
 	}
 
 	@AfterMethod
 	public void kill() {
-		terminateBrowser();
+		browser.quit();
 	}
 
 	@Test
 	public void verifyBasicAuthLogin() {
 		homePage = new HomePage(browser.getDriver());
-		fetchHomePageHeaderBase(homePage);
-		browser = homePage.basicAuthLogin();
+		String actualText;
+		String successAuthText = "Congratulations! You must have the proper credentials.";
+		homePage = new HomePage(browser.getDriver());
+		homePage.getHomePage();
+		homePage.performBasicAuthLogin();
+		setBrowser(homePage.fetchBrowser());
 		basicAuthPage = new BasicAuthPage(browser.getDriver());
-		Assert.assertEquals(performBasicAuthLogin(basicAuthPage), successAuthText);
+		actualText = basicAuthPage.getSuccessText();
+		screenshot(this.getClass().getSimpleName(), Thread.currentThread().getStackTrace()[1].getMethodName());
+		Assert.assertEquals(actualText, successAuthText);
 	}
 }

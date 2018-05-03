@@ -13,7 +13,9 @@ public class ChromePropertyReader {
 
 	private static final Logger log = Logger.getLogger(ChromePropertyReader.class);
 
-	public ChromePropertyReader() {
+	private static ChromePropertyReader chromePropertyReader = null;
+	
+	private ChromePropertyReader() {
 		FileReader reader;
 		try {
 			reader = new FileReader(".\\src\\main\\resources\\propertyfiles\\googlechrome.properties");
@@ -27,6 +29,13 @@ public class ChromePropertyReader {
 		} catch (IOException io) {
 			log.error("Can't find bundle" + io.getMessage());
 		}
+	}
+	
+	public static ChromePropertyReader getInstance() {
+		if (chromePropertyReader == null) {
+			chromePropertyReader = new ChromePropertyReader();
+		}
+		return chromePropertyReader;
 	}
 
 	public String getChromeOptions() {

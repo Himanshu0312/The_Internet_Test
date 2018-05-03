@@ -18,7 +18,9 @@ public class HomePage {
 
 	private static final Logger log = Logger.getLogger(HomePage.class);
 	WebDriver driver;
-	CommonUtilsReader commonUtilsReader;
+	MyBrowserManager newBrowser;
+
+	String resultStr;
 
 	String userName = "admin";
 	String password = "admin";
@@ -35,35 +37,42 @@ public class HomePage {
 	public HomePage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
-		commonUtilsReader = new CommonUtilsReader();
 	}
 
-	public String fetchHomePageHeader() {
-		String resultStr = null;
+	public void getHomePage() {
 		try {
-			driver.get(commonUtilsReader.getHomePageUrl());
+			driver.get(CommonUtilsReader.getInstance().getHomePageUrl());
 			new WebDriverWait(driver, Wait.MED.interval()).until(ExpectedConditions.visibilityOf(headerName));
-			resultStr = headerName.getText();
 		} catch (ElementNotVisibleException enve) {
 			log.error("Header Name not found." + enve.getMessage());
 		} catch (TimeoutException te) {
 			log.error("TimeoutException found." + te.getMessage());
 		} catch (NullPointerException npe) {
 			log.error("NullPointerException found." + npe.getMessage());
+		} catch (Exception e) {
+			log.error("Exception found." + e.getMessage());
 		}
-		return resultStr;
 	}
 
-	public MyBrowserManager basicAuthLogin() {
+	public String fetchHomePageHeader() {
+		newBrowser = new MyBrowserManager();
+		newBrowser.setDriver(driver);
+		return headerName.getText();
+	}
+	
+	public MyBrowserManager fetchBrowser() {
+		return newBrowser;
+	}
+
+	
+	public void performBasicAuthLogin() {
+		newBrowser = new MyBrowserManager();
 		String newBasicAuthUrl = null;
-		MyBrowserManager newBrowser = new MyBrowserManager();
 		try {
 			if (basicAuthElemment.isDisplayed()) {
-				newBasicAuthUrl = (commonUtilsReader.getBasicAuthUrl().replace("USER", userName)).replace("PASS",
-						password);
-				if (newBasicAuthUrl != null) {
-					driver.get(newBasicAuthUrl);
-				}
+				newBasicAuthUrl = (CommonUtilsReader.getInstance().getBasicAuthUrl().replace("USER", userName))
+						.replace("PASS", password);
+				driver.get(newBasicAuthUrl);
 			}
 			newBrowser.setDriver(driver);
 		} catch (ElementNotVisibleException enve) {
@@ -73,19 +82,19 @@ public class HomePage {
 		} catch (Exception e) {
 			log.error("Exception found." + e.getMessage());
 		}
-		return newBrowser;
 	}
 
-	public MyBrowserManager clickOnBrokenImagesLink() {
-		MyBrowserManager newBrowser = new MyBrowserManager();
+	public void clickOnBrokenImagesLink() {
+		newBrowser = new MyBrowserManager();
 		try {
-			brokenImagesLinkElement.click();
-			newBrowser.setDriver(driver);
+			if (basicAuthElemment.isDisplayed()) {
+				brokenImagesLinkElement.click();
+				newBrowser.setDriver(driver);
+			}
 		} catch (ElementNotVisibleException enve) {
 			log.error("brokenImagesLinkElement not found." + enve.getMessage());
 		} catch (Exception e) {
 			log.error("Exception found" + e.getMessage());
 		}
-		return newBrowser;
 	}
 }

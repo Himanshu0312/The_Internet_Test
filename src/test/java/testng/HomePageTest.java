@@ -10,23 +10,26 @@ import utilities.MyBrowserManager;
 
 public class HomePageTest extends BaseTest {
 
-	HomePage homePage;
-	String homePageWelcomeText = "Welcome to the-internet";
-	
 	@BeforeMethod
 	public void setup() {
-		browser = new MyBrowserManager(commonUtilReader.getBrowserValue());
-		startMyBrowser(browser);
+		browser = new MyBrowserManager(1);
+		browser.initiate();
 	}
 
 	@AfterMethod
 	public void kill() {
-		terminateBrowser();
+		browser.quit();
 	}
 
 	@Test
 	public void verifyHomePageAvailiablity() {
 		homePage = new HomePage(browser.getDriver());
-		Assert.assertEquals(fetchHomePageHeaderBase(homePage), homePageWelcomeText);
+		String actualText;
+		String homePageWelcomeText = "Welcome to the-internet";
+		homePage.getHomePage();
+		actualText = homePage.fetchHomePageHeader();
+		setBrowser(homePage.fetchBrowser());
+		screenshot(this.getClass().getSimpleName(), Thread.currentThread().getStackTrace()[1].getMethodName());
+		Assert.assertEquals(actualText, homePageWelcomeText);
 	}
 }

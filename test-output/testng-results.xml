@@ -2,24 +2,24 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="29875" started-at="2018-05-01T06:01:11Z" finished-at="2018-05-01T06:01:41Z">
+  <suite name="Default suite" duration-ms="22663" started-at="2018-05-03T08:43:55Z" finished-at="2018-05-03T08:44:18Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="29875" started-at="2018-05-01T06:01:11Z" finished-at="2018-05-01T06:01:41Z">
-      <class name="testng.HomePageTest">
-        <test-method status="PASS" signature="setup()[pri:0, instance:testng.HomePageTest@5ce81285]" name="setup" is-config="true" duration-ms="24447" started-at="2018-05-01T06:01:11Z" finished-at="2018-05-01T06:01:36Z">
+    <test name="Default test" duration-ms="22663" started-at="2018-05-03T08:43:55Z" finished-at="2018-05-03T08:44:18Z">
+      <class name="testng.BrokenImagesTest">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:testng.BrokenImagesTest@5ec0a365]" name="beforeTest" is-config="true" duration-ms="8987" started-at="2018-05-03T08:43:55Z" finished-at="2018-05-03T08:44:04Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method status="PASS" signature="verifyHomePageAvailiablity()[pri:0, instance:testng.HomePageTest@5ce81285]" name="verifyHomePageAvailiablity" duration-ms="4454" started-at="2018-05-01T06:01:36Z" finished-at="2018-05-01T06:01:40Z">
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="verifyBrokenImagaes()[pri:0, instance:testng.BrokenImagesTest@5ec0a365]" name="verifyBrokenImagaes" duration-ms="12688" started-at="2018-05-03T08:44:04Z" finished-at="2018-05-03T08:44:17Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyHomePageAvailiablity -->
-        <test-method status="PASS" signature="kill()[pri:0, instance:testng.HomePageTest@5ce81285]" name="kill" is-config="true" duration-ms="938" started-at="2018-05-01T06:01:40Z" finished-at="2018-05-01T06:01:41Z">
+        </test-method> <!-- verifyBrokenImagaes -->
+        <test-method status="PASS" signature="kill()[pri:0, instance:testng.BrokenImagesTest@5ec0a365]" name="kill" is-config="true" duration-ms="969" started-at="2018-05-03T08:44:17Z" finished-at="2018-05-03T08:44:18Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- kill -->
-      </class> <!-- testng.HomePageTest -->
+      </class> <!-- testng.BrokenImagesTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

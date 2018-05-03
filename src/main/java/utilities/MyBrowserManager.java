@@ -1,5 +1,7 @@
 package utilities;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
@@ -14,10 +16,8 @@ import org.openqa.selenium.edge.EdgeDriver;
 public class MyBrowserManager {
 
 	private static final Logger log = Logger.getLogger(MyBrowserManager.class);
-	int browserValue;
-	ChromePropertyReader chromePropertyReader;
-	EdgePropertyReader edgePropertyReader;
 
+	int browserValue;
 	WebDriver driver;
 	WebElement element;
 
@@ -49,23 +49,24 @@ public class MyBrowserManager {
 		try {
 			switch (browserValue) {
 			case 1:
-				chromePropertyReader = new ChromePropertyReader();
-				System.setProperty(chromePropertyReader.propertyName, chromePropertyReader.driverLocation);
+				System.setProperty(ChromePropertyReader.getInstance().propertyName,
+						ChromePropertyReader.getInstance().driverLocation);
 				log.info("Settings " + browserValue + " propety..");
 				log.info("Initiating " + browserValue + "...");
-				driver = new ChromeDriver(new ChromeOptions().addArguments(chromePropertyReader.getChromeOptions()));
-				maximize();
+				driver = new ChromeDriver(
+						new ChromeOptions().addArguments(ChromePropertyReader.getInstance().getChromeOptions()));
+				driver.manage().window().maximize();
 				log.info("Maximize done.");
 				driver.manage().timeouts().implicitlyWait(Wait.LOW.interval(), TimeUnit.SECONDS);
 				break;
 
 			case 2:
-				edgePropertyReader = new EdgePropertyReader();
-				System.setProperty(edgePropertyReader.propertyName, edgePropertyReader.driverLocation);
+				System.setProperty(EdgePropertyReader.getInstance().propertyName,
+						EdgePropertyReader.getInstance().driverLocation);
 				log.info("Settings " + browserValue + " propety..");
 				log.info("Initiating " + browserValue + "...");
 				driver = new EdgeDriver();
-				maximize();
+				driver.manage().window().maximize();
 				log.info("Maximize done.");
 				driver.manage().timeouts().implicitlyWait(Wait.LOW.interval(), TimeUnit.SECONDS);
 				break;
@@ -99,16 +100,6 @@ public class MyBrowserManager {
 		try {
 			driver.quit();
 			log.info("Browser Quit completed.");
-		} catch (NullPointerException npe) {
-			log.error("NullPointerException found.");
-		} catch (Exception e) {
-			log.error("Exception found." + e.getMessage());
-		}
-	}
-
-	public void maximize() {
-		try {
-			driver.manage().window().maximize();
 		} catch (NullPointerException npe) {
 			log.error("NullPointerException found.");
 		} catch (Exception e) {
