@@ -11,6 +11,8 @@ import org.openqa.selenium.TakesScreenshot;
 
 import pageobjects.BasicAuthPage;
 import pageobjects.BrokenImagesPage;
+import pageobjects.ChallengingDomPage;
+import pageobjects.CheckboxesPage;
 import pageobjects.HomePage;
 import utilities.CommonUtilsReader;
 import utilities.MyBrowserManager;
@@ -22,6 +24,8 @@ public class BaseTest {
 	HomePage homePage;
 	BasicAuthPage basicAuthPage;
 	BrokenImagesPage brokenImagesPage;
+	ChallengingDomPage challengingDomPage;
+	CheckboxesPage checkboxesPage;
 	MyBrowserManager browser;
 
 	public MyBrowserManager getBrowser() {

@@ -33,6 +33,25 @@ public class HomePage {
 
 	@FindBy(linkText = "Broken Images")
 	WebElement brokenImagesLinkElement;
+	
+	
+	public WebElement getBrokenImagesLinkElement() {
+		return brokenImagesLinkElement;
+	}
+
+	public WebElement getChallengingDomLinkElement() {
+		return challengingDomLinkElement;
+	}
+	
+	@FindBy(linkText = "Checkboxes")
+	WebElement checkboxesLinkElement;
+	
+	public WebElement getCheckboxesLinkElement() {
+		return checkboxesLinkElement;
+	}
+
+	@FindBy(linkText = "Challenging DOM")
+	WebElement challengingDomLinkElement;
 
 	public HomePage(WebDriver driver) {
 		this.driver = driver;
@@ -84,16 +103,18 @@ public class HomePage {
 		}
 	}
 
-	public void clickOnBrokenImagesLink() {
+	public void click(WebElement linkTextElementOnHomePage) {
 		newBrowser = new MyBrowserManager();
 		try {
-			if (basicAuthElemment.isDisplayed()) {
-				brokenImagesLinkElement.click();
+			if (linkTextElementOnHomePage.isDisplayed()) {
+				linkTextElementOnHomePage.click();
 				newBrowser.setDriver(driver);
 			}
 		} catch (ElementNotVisibleException enve) {
-			log.error("brokenImagesLinkElement not found." + enve.getMessage());
-		} catch (Exception e) {
+			log.error("linkTextElementOnHomePage not found." + enve.getMessage());
+		} catch (TimeoutException te) {
+			log.error("TimeoutException found." + te.getMessage());
+		}catch (Exception e) {
 			log.error("Exception found" + e.getMessage());
 		}
 	}

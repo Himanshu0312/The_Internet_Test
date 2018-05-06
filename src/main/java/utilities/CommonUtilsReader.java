@@ -13,34 +13,40 @@ public class CommonUtilsReader {
 	String homePageUrl;
 	String basicAuthUrl;
 	int browserValue;
-	String screenshotLocation;
+	String screenshotLocation, checkboxesLocationOnCheckBoxesPage;
+	Properties commonProperty;
 
 	private static CommonUtilsReader commonUtilsReader = null;
-	
-	
+
 	private CommonUtilsReader() {
-		FileReader reader;
+		FileReader readerForCommonProperty;
 		try {
-			reader = new FileReader(".\\src\\main\\resources\\propertyfiles\\commonutils.properties");
-			Properties p = new Properties();
-			p.load(reader);
-			homePageUrl = p.getProperty("HOME_PAGE");
-			basicAuthUrl = p.getProperty("BASIC_AUTH_URL");
-			browserValue = Integer.parseInt(p.getProperty("BROWSER_VALUE"));
-			screenshotLocation = p.getProperty("SCREENSHOT_SOURCE");
+			readerForCommonProperty = new FileReader(".\\src\\main\\resources\\propertyfiles\\commonutils.properties");
+			commonProperty = new Properties();
+			commonProperty.load(readerForCommonProperty);
+			homePageUrl = commonProperty.getProperty("HOME_PAGE");
+			basicAuthUrl = commonProperty.getProperty("BASIC_AUTH_URL");
+			browserValue = Integer.parseInt(commonProperty.getProperty("BROWSER_VALUE"));
+			screenshotLocation = commonProperty.getProperty("SCREENSHOT_SOURCE");
 		} catch (FileNotFoundException fnf) {
 			log.error("Can't find bundle" + fnf.getMessage());
 		} catch (IOException io) {
 			log.error("Can't find bundle" + io.getMessage());
+		}catch (Exception e) {
+			log.error("Exception found." + e.getMessage());
 		}
 	}
-	
-	public static CommonUtilsReader getInstance(){
-        if(commonUtilsReader == null){
-        	commonUtilsReader = new CommonUtilsReader();
-        }
-        return commonUtilsReader;
-    }
+
+	public static CommonUtilsReader getInstance() {
+		if (commonUtilsReader == null) {
+			commonUtilsReader = new CommonUtilsReader();
+		}
+		return commonUtilsReader;
+	}
+
+	public String getCheckboxesLocationOnCheckBoxesPage() {
+		return checkboxesLocationOnCheckBoxesPage;
+	}
 
 	public String getScreenshotLocation() {
 		return screenshotLocation;
@@ -56,5 +62,9 @@ public class CommonUtilsReader {
 
 	public String getBasicAuthUrl() {
 		return basicAuthUrl;
+	}
+	
+	public static void main(String[] args) {
+	System.out.println(CommonUtilsReader.getInstance().getCheckboxesLocationOnCheckBoxesPage());
 	}
 }

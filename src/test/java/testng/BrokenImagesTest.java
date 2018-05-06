@@ -27,7 +27,7 @@ public class BrokenImagesTest extends BaseTest {
 		homePage = new HomePage(browser.getDriver());
 		homePage.getHomePage();
 		int acutalCount;
-		homePage.clickOnBrokenImagesLink();
+		homePage.click(homePage.getBrokenImagesLinkElement());
 		setBrowser(homePage.fetchBrowser());
 		brokenImagesPage = new BrokenImagesPage(browser.getDriver());
 		acutalCount = brokenImagesPage.numberOfBrokenImages();

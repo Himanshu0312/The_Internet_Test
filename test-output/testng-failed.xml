@@ -3,13 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testng.HomePageTest">
+      <class name="testng.CheckboxesPageTest">
         <methods>
-          <include name="verifyHomePageAvailiablity"/>
-          <include name="setup"/>
           <include name="kill"/>
+          <include name="setup"/>
+          <include name="verifyUncheckAllCheckboxes"/>
+          <include name="verifyCheckAllCheckboxes"/>
         </methods>
-      </class> <!-- testng.HomePageTest -->
+      </class> <!-- testng.CheckboxesPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

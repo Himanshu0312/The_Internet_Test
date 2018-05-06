@@ -1,25 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="22663" started-at="2018-05-03T08:43:55Z" finished-at="2018-05-03T08:44:18Z">
+  <suite name="Default suite" duration-ms="15753" started-at="2018-05-06T15:26:46Z" finished-at="2018-05-06T15:27:02Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="22663" started-at="2018-05-03T08:43:55Z" finished-at="2018-05-03T08:44:18Z">
-      <class name="testng.BrokenImagesTest">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:testng.BrokenImagesTest@5ec0a365]" name="beforeTest" is-config="true" duration-ms="8987" started-at="2018-05-03T08:43:55Z" finished-at="2018-05-03T08:44:04Z">
+    <test name="Default test" duration-ms="15753" started-at="2018-05-06T15:26:46Z" finished-at="2018-05-06T15:27:02Z">
+      <class name="testng.CheckboxesPageTest">
+        <test-method status="PASS" signature="setup()[pri:0, instance:testng.CheckboxesPageTest@66480dd7]" name="setup" is-config="true" duration-ms="8126" started-at="2018-05-06T15:26:46Z" finished-at="2018-05-06T15:26:54Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="verifyBrokenImagaes()[pri:0, instance:testng.BrokenImagesTest@5ec0a365]" name="verifyBrokenImagaes" duration-ms="12688" started-at="2018-05-03T08:44:04Z" finished-at="2018-05-03T08:44:17Z">
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="verifyCheckAllCheckboxes()[pri:0, instance:testng.CheckboxesPageTest@66480dd7]" name="verifyCheckAllCheckboxes" duration-ms="6102" started-at="2018-05-06T15:26:54Z" finished-at="2018-05-06T15:27:00Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyBrokenImagaes -->
-        <test-method status="PASS" signature="kill()[pri:0, instance:testng.BrokenImagesTest@5ec0a365]" name="kill" is-config="true" duration-ms="969" started-at="2018-05-03T08:44:17Z" finished-at="2018-05-03T08:44:18Z">
+        </test-method> <!-- verifyCheckAllCheckboxes -->
+        <test-method status="PASS" signature="verifyUncheckAllCheckboxes()[pri:0, instance:testng.CheckboxesPageTest@66480dd7]" name="verifyUncheckAllCheckboxes" duration-ms="540" started-at="2018-05-06T15:27:00Z" finished-at="2018-05-06T15:27:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyUncheckAllCheckboxes -->
+        <test-method status="PASS" signature="kill()[pri:0, instance:testng.CheckboxesPageTest@66480dd7]" name="kill" is-config="true" duration-ms="969" started-at="2018-05-06T15:27:01Z" finished-at="2018-05-06T15:27:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- kill -->
-      </class> <!-- testng.BrokenImagesTest -->
+      </class> <!-- testng.CheckboxesPageTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
