@@ -6,13 +6,11 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import pageobjects.HomePage;
-import utilities.MyBrowserManager;
 
 public class HomePageTest extends BaseTest {
 
 	@BeforeMethod
 	public void setup() {
-		browser = new MyBrowserManager(1);
 		browser.initiate();
 	}
 

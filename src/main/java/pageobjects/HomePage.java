@@ -46,6 +46,14 @@ public class HomePage {
 	@FindBy(linkText = "Checkboxes")
 	WebElement checkboxesLinkElement;
 	
+	@FindBy(linkText = "Disappearing Elements")
+	WebElement disappearingElements;
+	
+	
+	public WebElement getDisappearingElements() {
+		return disappearingElements;
+	}
+
 	public WebElement getCheckboxesLinkElement() {
 		return checkboxesLinkElement;
 	}

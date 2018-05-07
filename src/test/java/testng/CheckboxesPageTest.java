@@ -7,14 +7,11 @@ import org.testng.annotations.Test;
 
 import pageobjects.CheckboxesPage;
 import pageobjects.HomePage;
-import utilities.CommonUtilsReader;
-import utilities.MyBrowserManager;
 
 
 public class CheckboxesPageTest extends BaseTest{
 	@BeforeTest
 	public void setup() {
-		browser = new MyBrowserManager(1);
 		browser.initiate();
 	}
 

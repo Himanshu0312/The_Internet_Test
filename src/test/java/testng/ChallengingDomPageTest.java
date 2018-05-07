@@ -7,12 +7,10 @@ import org.testng.annotations.Test;
 
 import pageobjects.ChallengingDomPage;
 import pageobjects.HomePage;
-import utilities.MyBrowserManager;
 
 public class ChallengingDomPageTest extends BaseTest {
 	@BeforeTest
 	public void setup() {
-		browser = new MyBrowserManager(1);
 		browser.initiate();
 	}
 

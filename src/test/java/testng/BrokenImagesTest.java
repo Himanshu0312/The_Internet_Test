@@ -7,13 +7,11 @@ import org.testng.annotations.Test;
 
 import pageobjects.BrokenImagesPage;
 import pageobjects.HomePage;
-import utilities.MyBrowserManager;
 
 public class BrokenImagesTest extends BaseTest {
 
 	@BeforeMethod
 	public void beforeTest() {
-		browser = new MyBrowserManager(1);
 		browser.initiate();
 	}
 

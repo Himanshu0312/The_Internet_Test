@@ -7,13 +7,11 @@ import org.testng.annotations.Test;
 
 import pageobjects.BasicAuthPage;
 import pageobjects.HomePage;
-import utilities.MyBrowserManager;
 
 public class BasicAuthTest extends BaseTest {
 
 	@BeforeMethod
 	public void setup() {
-		browser = new MyBrowserManager(1);
 		browser.initiate();
 	}
 

@@ -13,6 +13,7 @@ import pageobjects.BasicAuthPage;
 import pageobjects.BrokenImagesPage;
 import pageobjects.ChallengingDomPage;
 import pageobjects.CheckboxesPage;
+import pageobjects.DisappearingElementsPage;
 import pageobjects.HomePage;
 import utilities.CommonUtilsReader;
 import utilities.MyBrowserManager;
@@ -26,7 +27,9 @@ public class BaseTest {
 	BrokenImagesPage brokenImagesPage;
 	ChallengingDomPage challengingDomPage;
 	CheckboxesPage checkboxesPage;
-	MyBrowserManager browser;
+	DisappearingElementsPage disappearingElementsPage;
+	
+	MyBrowserManager browser= new MyBrowserManager(1);
 
 	public MyBrowserManager getBrowser() {
 		return browser;

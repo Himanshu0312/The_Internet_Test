@@ -1,10 +1,9 @@
 package utilities;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
+import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.SessionNotCreatedException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
@@ -12,6 +11,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class MyBrowserManager {
 
@@ -20,7 +22,7 @@ public class MyBrowserManager {
 	int browserValue;
 	WebDriver driver;
 	WebElement element;
-
+	
 	public WebElement getElement() {
 		return element;
 	}
@@ -29,9 +31,8 @@ public class MyBrowserManager {
 		this.element = element;
 	}
 
-	public MyBrowserManager() {
-	}
-
+	public MyBrowserManager() {	}
+	
 	public MyBrowserManager(int browserValue) {
 		this.browserValue = browserValue;
 	}
@@ -45,27 +46,56 @@ public class MyBrowserManager {
 	}
 
 	public void initiate() {
+		Capabilities capabilities;
 		log.info("Browser Setup initiated..");
 		try {
 			switch (browserValue) {
 			case 1:
-				System.setProperty(ChromePropertyReader.getInstance().propertyName,
-						ChromePropertyReader.getInstance().driverLocation);
-				log.info("Settings " + browserValue + " propety..");
-				log.info("Initiating " + browserValue + "...");
+				System.setProperty(BrowserPropertyReader.getInstance().getChromePropertyName(),
+						BrowserPropertyReader.getInstance().getChromeDriverLocation());
 				driver = new ChromeDriver(
-						new ChromeOptions().addArguments(ChromePropertyReader.getInstance().getChromeOptions()));
+						new ChromeOptions().addArguments(BrowserPropertyReader.getInstance().getChromeOptions()));	
+				capabilities = ((ChromeDriver) driver).getCapabilities();
+				log.info("Initiating "+capabilities.getBrowserName()+" : "+capabilities.getVersion());
+				log.info("Running on "+capabilities.getPlatform());
 				driver.manage().window().maximize();
 				log.info("Maximize done.");
 				driver.manage().timeouts().implicitlyWait(Wait.LOW.interval(), TimeUnit.SECONDS);
 				break;
 
 			case 2:
-				System.setProperty(EdgePropertyReader.getInstance().propertyName,
-						EdgePropertyReader.getInstance().driverLocation);
-				log.info("Settings " + browserValue + " propety..");
-				log.info("Initiating " + browserValue + "...");
+				System.setProperty(BrowserPropertyReader.getInstance().getEdgePropertyName(),
+						BrowserPropertyReader.getInstance().getEdgeDriverLocation());
 				driver = new EdgeDriver();
+				capabilities = ((EdgeDriver) driver).getCapabilities();
+				log.info("Initiating "+capabilities.getBrowserName()+" : "+capabilities.getVersion());
+				log.info("Running on "+capabilities.getPlatform());
+				driver.manage().window().maximize();
+				log.info("Maximize done.");
+				driver.manage().timeouts().implicitlyWait(Wait.LOW.interval(), TimeUnit.SECONDS);
+				break;
+				
+			case 3:
+				System.setProperty(BrowserPropertyReader.getInstance().getGeckoPropertyName(),
+						BrowserPropertyReader.getInstance().getGeckoPropertyName());
+				driver = new FirefoxDriver();
+				capabilities = ((FirefoxDriver) driver).getCapabilities();
+				log.info("Initiating "+capabilities.getBrowserName()+" : "+capabilities.getVersion());
+				log.info("Running on "+capabilities.getPlatform());
+				driver.manage().window().maximize();
+				log.info("Maximize done.");
+				driver.manage().timeouts().implicitlyWait(Wait.LOW.interval(), TimeUnit.SECONDS);
+				break;
+				
+			case 4:
+				System.setProperty(BrowserPropertyReader.getInstance().getIePropertyName(),
+						BrowserPropertyReader.getInstance().getIeDriverLocation());
+				DesiredCapabilities desiredCapabilities = DesiredCapabilities.internetExplorer();
+				desiredCapabilities.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,true);
+				driver = new InternetExplorerDriver();
+				capabilities = ((InternetExplorerDriver) driver).getCapabilities();
+				log.info("Initiating "+capabilities.getBrowserName()+" : "+capabilities.getVersion());
+				log.info("Running on "+capabilities.getPlatform());
 				driver.manage().window().maximize();
 				log.info("Maximize done.");
 				driver.manage().timeouts().implicitlyWait(Wait.LOW.interval(), TimeUnit.SECONDS);
