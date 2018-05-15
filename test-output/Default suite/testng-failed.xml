@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testng.DragNDropPageTest">
+      <class name="testng.BasicAuthTest">
         <methods>
-          <include name="kill"/>
           <include name="setup"/>
-          <include name="verifyDragAtoB"/>
+          <include name="verifyBasicAuthLogin"/>
+          <include name="kill"/>
         </methods>
-      </class> <!-- testng.DragNDropPageTest -->
+      </class> <!-- testng.BasicAuthTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

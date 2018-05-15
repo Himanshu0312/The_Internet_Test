@@ -10,8 +10,8 @@ import pageobjects.BasicAuthPage;
 import pageobjects.HomePage;
 import utilities.MyBrowserManager;
 
-public class BasicAuthTest extends BaseTest {
-
+public class BasicAuthTest extends BaseTest {	
+	
 	@BeforeMethod
 	@Parameters("browserValue")
 	public void setup(String browserValue) {
