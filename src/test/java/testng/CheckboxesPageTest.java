@@ -3,15 +3,19 @@ package testng;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import pageobjects.CheckboxesPage;
 import pageobjects.HomePage;
+import utilities.MyBrowserManager;
 
 
 public class CheckboxesPageTest extends BaseTest{
 	@BeforeTest
-	public void setup() {
+	@Parameters("browserValue")
+	public void setup(String browserValue) {
+		browser= new MyBrowserManager(Integer.parseInt(browserValue));
 		browser.initiate();
 	}
 

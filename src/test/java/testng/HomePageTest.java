@@ -3,14 +3,18 @@ package testng;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import pageobjects.HomePage;
+import utilities.MyBrowserManager;
 
 public class HomePageTest extends BaseTest {
 
 	@BeforeMethod
-	public void setup() {
+	@Parameters("browserValue")
+	public void setup(String browserValue) {
+		browser= new MyBrowserManager(Integer.parseInt(browserValue));
 		browser.initiate();
 	}
 

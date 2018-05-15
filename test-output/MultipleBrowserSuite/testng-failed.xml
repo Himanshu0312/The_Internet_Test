@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="6" guice-stage="DEVELOPMENT" name="Failed suite [MultipleBrowserSuite]" parallel="classes">
+  <test thread-count="6" name="GoogleChromeTest(failed)" parallel="classes">
+    <parameter name="browserValue" value="1"/>
+    <classes>
+      <class name="testng.DropDownTestPage">
+        <methods>
+          <include name="setup"/>
+          <include name="verifyDropDownPageAvailiablity"/>
+          <include name="kill"/>
+          <include name="verifyGetDropDownOptions"/>
+        </methods>
+      </class> <!-- testng.DropDownTestPage -->
+    </classes>
+  </test> <!-- GoogleChromeTest(failed) -->
+</suite> <!-- Failed suite [MultipleBrowserSuite] -->

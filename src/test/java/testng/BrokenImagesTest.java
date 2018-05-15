@@ -3,15 +3,19 @@ package testng;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import pageobjects.BrokenImagesPage;
 import pageobjects.HomePage;
+import utilities.MyBrowserManager;
 
 public class BrokenImagesTest extends BaseTest {
 
 	@BeforeMethod
-	public void beforeTest() {
+	@Parameters("browserValue")
+	public void setup(String browserValue) {
+		browser= new MyBrowserManager(Integer.parseInt(browserValue));
 		browser.initiate();
 	}
 

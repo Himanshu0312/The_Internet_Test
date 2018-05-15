@@ -77,7 +77,7 @@ public class MyBrowserManager {
 				
 			case 3:
 				System.setProperty(BrowserPropertyReader.getInstance().getGeckoPropertyName(),
-						BrowserPropertyReader.getInstance().getGeckoPropertyName());
+						BrowserPropertyReader.getInstance().getGeckoDriverLocation());
 				driver = new FirefoxDriver();
 				capabilities = ((FirefoxDriver) driver).getCapabilities();
 				log.info("Initiating "+capabilities.getBrowserName()+" : "+capabilities.getVersion());

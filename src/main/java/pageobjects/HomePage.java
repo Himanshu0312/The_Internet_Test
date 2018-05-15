@@ -60,6 +60,21 @@ public class HomePage {
 
 	@FindBy(linkText = "Challenging DOM")
 	WebElement challengingDomLinkElement;
+	
+	@FindBy(linkText = "Drag and Drop")
+	WebElement dragNDrop;
+	
+	@FindBy(linkText = "Dropdown")
+	WebElement dropdownLinkElement;
+		
+	
+	public WebElement getDragNDrop() {
+		return dragNDrop;
+	}
+
+	public WebElement getDropdownLinkElement() {
+		return dropdownLinkElement;
+	}
 
 	public HomePage(WebDriver driver) {
 		this.driver = driver;

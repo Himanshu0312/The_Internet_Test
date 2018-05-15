@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Multiple Browser" thread-count="3" parallel="classes">
+	<test name="GoogleChrome">
+		<parameter name="browserValue" value="1" />
+		<classes>
+			<class name="testng.HomePageTest"/>
+			<class name="testng.BasicAuthTest"/>
+			<class name="testng.BrokenImagesTest"/>
+			<class name="testng.ChallengingDomPageTest"/>
+			<class name="testng.CheckboxesPageTest"/>
+			<class name="testng.DisappearingElementsPageTest"/>
+			
+			<class name="testng.DropDownPageTest"/>
+			
+			<!-- <class name="testng.DragNDropPageTest"/>  -->
+		</classes>
+	</test>
+	<test name="Firefox">
+		<parameter name="browserValue" value="3" />
+		<classes>
+			<class name="testng.HomePageTest"/>
+			<class name="testng.BasicAuthTest"/>
+			<class name="testng.BrokenImagesTest"/>
+			<class name="testng.ChallengingDomPageTest"/>
+			<class name="testng.CheckboxesPageTest"/>
+			<class name="testng.DisappearingElementsPageTest"/> 
+			
+			<class name="testng.DropDownPageTest"/>
+			
+			<!-- <class name="testng.DragNDropPageTest"/> -->
+		</classes>
+	</test>
+</suite>

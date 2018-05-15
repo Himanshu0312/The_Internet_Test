@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testng.HomePageTest">
+      <class name="testng.DragNDropPageTest">
         <methods>
-          <include name="verifyHomePageAvailiablity"/>
-          <include name="setup"/>
           <include name="kill"/>
+          <include name="setup"/>
+          <include name="verifyDragAtoB"/>
         </methods>
-      </class> <!-- testng.HomePageTest -->
+      </class> <!-- testng.DragNDropPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

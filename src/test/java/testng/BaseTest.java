@@ -14,6 +14,8 @@ import pageobjects.BrokenImagesPage;
 import pageobjects.ChallengingDomPage;
 import pageobjects.CheckboxesPage;
 import pageobjects.DisappearingElementsPage;
+import pageobjects.DragNDropPage;
+import pageobjects.DropDownPage;
 import pageobjects.HomePage;
 import utilities.CommonUtilsReader;
 import utilities.MyBrowserManager;
@@ -21,15 +23,17 @@ import utilities.MyBrowserManager;
 public class BaseTest {
 
 	private static final Logger log = Logger.getLogger(BrokenImagesPage.class);
-	
+
 	HomePage homePage;
 	BasicAuthPage basicAuthPage;
 	BrokenImagesPage brokenImagesPage;
 	ChallengingDomPage challengingDomPage;
 	CheckboxesPage checkboxesPage;
 	DisappearingElementsPage disappearingElementsPage;
-	
-	MyBrowserManager browser= new MyBrowserManager(1);
+	DragNDropPage dragNDropPage;
+	DropDownPage dropDownPage;
+
+	MyBrowserManager browser;
 
 	public MyBrowserManager getBrowser() {
 		return browser;
@@ -50,11 +54,11 @@ public class BaseTest {
 			File sourceFile = screenShot.getScreenshotAs(OutputType.FILE);
 			File destinationFile = new File(sourcePath);
 			FileUtils.copyFile(sourceFile, destinationFile);
-			log.info("Your File is at : "+sourcePath);
+			log.info("Your File is at : " + sourcePath);
 		} catch (NullPointerException npe) {
 			log.error("NullPointerException found." + npe.getMessage());
 		} catch (Exception e) {
 			log.error("Exception found." + e.getMessage());
 		}
-	}	
+	}
 }

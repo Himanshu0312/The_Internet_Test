@@ -1,25 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
+<testng-results skipped="0" failed="2" ignored="0" total="20" passed="18">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="20707" started-at="2018-05-07T10:06:36Z" finished-at="2018-05-07T10:06:57Z">
+  <suite name="Multiple Browser" duration-ms="220846" started-at="2018-05-15T12:44:11Z" finished-at="2018-05-15T12:47:52Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="20707" started-at="2018-05-07T10:06:36Z" finished-at="2018-05-07T10:06:57Z">
+    <test name="GoogleChrome" duration-ms="96053" started-at="2018-05-15T12:44:11Z" finished-at="2018-05-15T12:45:47Z">
       <class name="testng.HomePageTest">
-        <test-method status="PASS" signature="setup()[pri:0, instance:testng.HomePageTest@5abca1e0]" name="setup" is-config="true" duration-ms="20616" started-at="2018-05-07T10:06:36Z" finished-at="2018-05-07T10:06:57Z">
+        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:testng.HomePageTest@6d7b4f4c]" name="setup" is-config="true" duration-ms="18917" started-at="2018-05-15T12:44:35Z" finished-at="2018-05-15T12:44:54Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="FAIL" signature="verifyHomePageAvailiablity()[pri:0, instance:testng.HomePageTest@5abca1e0]" name="verifyHomePageAvailiablity" duration-ms="32" started-at="2018-05-07T10:06:57Z" finished-at="2018-05-07T10:06:57Z">
-          <exception class="java.lang.NullPointerException">
+        <test-method status="PASS" signature="verifyHomePageAvailiablity()[pri:0, instance:testng.HomePageTest@6d7b4f4c]" name="verifyHomePageAvailiablity" duration-ms="19107" started-at="2018-05-15T12:44:54Z" finished-at="2018-05-15T12:45:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyHomePageAvailiablity -->
+        <test-method status="PASS" signature="kill()[pri:0, instance:testng.HomePageTest@6d7b4f4c]" name="kill" is-config="true" duration-ms="2824" started-at="2018-05-15T12:45:13Z" finished-at="2018-05-15T12:45:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- kill -->
+      </class> <!-- testng.HomePageTest -->
+      <class name="testng.ChallengingDomPageTest">
+        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:testng.ChallengingDomPageTest@5abca1e0]" name="setup" is-config="true" duration-ms="8583" started-at="2018-05-15T12:44:11Z" finished-at="2018-05-15T12:44:20Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:testng.CheckboxesPageTest@2286778]" name="setup" is-config="true" duration-ms="7308" started-at="2018-05-15T12:44:20Z" finished-at="2018-05-15T12:44:27Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:testng.DropDownPageTest@4e9ba398]" name="setup" is-config="true" duration-ms="7527" started-at="2018-05-15T12:44:27Z" finished-at="2018-05-15T12:44:35Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="verifyButtonsAvailiablity()[pri:0, instance:testng.ChallengingDomPageTest@5abca1e0]" name="verifyButtonsAvailiablity" duration-ms="13274" started-at="2018-05-15T12:45:16Z" finished-at="2018-05-15T12:45:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyButtonsAvailiablity -->
+        <test-method status="PASS" signature="verifyCanvasAvailiablity()[pri:0, instance:testng.ChallengingDomPageTest@5abca1e0]" name="verifyCanvasAvailiablity" duration-ms="569" started-at="2018-05-15T12:45:29Z" finished-at="2018-05-15T12:45:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCanvasAvailiablity -->
+        <test-method status="PASS" signature="kill()[pri:0, instance:testng.ChallengingDomPageTest@5abca1e0]" name="kill" is-config="true" duration-ms="1012" started-at="2018-05-15T12:45:44Z" finished-at="2018-05-15T12:45:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- kill -->
+        <test-method status="PASS" signature="kill()[pri:0, instance:testng.CheckboxesPageTest@2286778]" name="kill" is-config="true" duration-ms="1001" started-at="2018-05-15T12:45:45Z" finished-at="2018-05-15T12:45:46Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- kill -->
+        <test-method status="PASS" signature="kill()[pri:0, instance:testng.DropDownPageTest@4e9ba398]" name="kill" is-config="true" duration-ms="1223" started-at="2018-05-15T12:45:46Z" finished-at="2018-05-15T12:45:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- kill -->
+      </class> <!-- testng.ChallengingDomPageTest -->
+      <class name="testng.DisappearingElementsPageTest">
+        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:testng.DisappearingElementsPageTest@3108bc]" name="setup" is-config="true" duration-ms="10137" started-at="2018-05-15T12:45:22Z" finished-at="2018-05-15T12:45:33Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="FAIL" signature="verifyBasicAuthLogin()[pri:0, instance:testng.DisappearingElementsPageTest@3108bc]" name="verifyBasicAuthLogin" duration-ms="10472" started-at="2018-05-15T12:45:33Z" finished-at="2018-05-15T12:45:43Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [5] but found [4]]]>
+            </message>
             <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at com.sun.proxy.$Proxy9.getText(Unknown Source)
-at pageobjects.HomePage.fetchHomePageHeader(HomePage.java:87)
-at testng.HomePageTest.verifyHomePageAvailiablity(HomePageTest.java:28)
+              <![CDATA[java.lang.AssertionError: expected [5] but found [4]
+at org.testng.Assert.fail(Assert.java:96)
+at org.testng.Assert.failNotEquals(Assert.java:776)
+at org.testng.Assert.assertEqualsImpl(Assert.java:137)
+at org.testng.Assert.assertEquals(Assert.java:118)
+at org.testng.Assert.assertEquals(Assert.java:652)
+at org.testng.Assert.assertEquals(Assert.java:662)
+at testng.DisappearingElementsPageTest.verifyBasicAuthLogin(DisappearingElementsPageTest.java:36)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -30,32 +118,272 @@ at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
 at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
 at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
 at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-at org.testng.TestNG.runSuites(TestNG.java:1049)
-at org.testng.TestNG.run(TestNG.java:1017)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+at java.lang.Thread.run(Thread.java:745)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyBasicAuthLogin -->
+        <test-method status="PASS" signature="kill()[pri:0, instance:testng.DisappearingElementsPageTest@3108bc]" name="kill" is-config="true" duration-ms="1092" started-at="2018-05-15T12:45:43Z" finished-at="2018-05-15T12:45:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- kill -->
+      </class> <!-- testng.DisappearingElementsPageTest -->
+      <class name="testng.BasicAuthTest">
+        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:testng.BasicAuthTest@527740a2]" name="setup" is-config="true" duration-ms="15496" started-at="2018-05-15T12:44:35Z" finished-at="2018-05-15T12:44:50Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="verifyBasicAuthLogin()[pri:0, instance:testng.BasicAuthTest@527740a2]" name="verifyBasicAuthLogin" duration-ms="22529" started-at="2018-05-15T12:44:50Z" finished-at="2018-05-15T12:45:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyBasicAuthLogin -->
+        <test-method status="PASS" signature="kill()[pri:0, instance:testng.BasicAuthTest@527740a2]" name="kill" is-config="true" duration-ms="2768" started-at="2018-05-15T12:45:13Z" finished-at="2018-05-15T12:45:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- kill -->
+      </class> <!-- testng.BasicAuthTest -->
+      <class name="testng.DropDownPageTest">
+        <test-method status="PASS" signature="verifyDropDownPageAvailiablity()[pri:0, instance:testng.DropDownPageTest@4e9ba398]" name="verifyDropDownPageAvailiablity" duration-ms="10926" started-at="2018-05-15T12:45:28Z" finished-at="2018-05-15T12:45:39Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyDropDownPageAvailiablity -->
+        <test-method status="PASS" signature="verifyGetDropDownOptions()[pri:0, instance:testng.DropDownPageTest@4e9ba398]" name="verifyGetDropDownOptions" duration-ms="752" started-at="2018-05-15T12:45:39Z" finished-at="2018-05-15T12:45:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyGetDropDownOptions -->
+      </class> <!-- testng.DropDownPageTest -->
+      <class name="testng.CheckboxesPageTest">
+        <test-method status="PASS" signature="verifyCheckAllCheckboxes()[pri:0, instance:testng.CheckboxesPageTest@2286778]" name="verifyCheckAllCheckboxes" duration-ms="11589" started-at="2018-05-15T12:45:16Z" finished-at="2018-05-15T12:45:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCheckAllCheckboxes -->
+        <test-method status="PASS" signature="verifyUncheckAllCheckboxes()[pri:0, instance:testng.CheckboxesPageTest@2286778]" name="verifyUncheckAllCheckboxes" duration-ms="904" started-at="2018-05-15T12:45:27Z" finished-at="2018-05-15T12:45:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyUncheckAllCheckboxes -->
+      </class> <!-- testng.CheckboxesPageTest -->
+      <class name="testng.BrokenImagesTest">
+        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:testng.BrokenImagesTest@13a5fe33]" name="setup" is-config="true" duration-ms="18910" started-at="2018-05-15T12:44:35Z" finished-at="2018-05-15T12:44:54Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="verifyBrokenImagaes()[pri:0, instance:testng.BrokenImagesTest@13a5fe33]" name="verifyBrokenImagaes" duration-ms="27578" started-at="2018-05-15T12:44:54Z" finished-at="2018-05-15T12:45:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyBrokenImagaes -->
+        <test-method status="PASS" signature="kill()[pri:0, instance:testng.BrokenImagesTest@13a5fe33]" name="kill" is-config="true" duration-ms="1157" started-at="2018-05-15T12:45:21Z" finished-at="2018-05-15T12:45:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- kill -->
+      </class> <!-- testng.BrokenImagesTest -->
+    </test> <!-- GoogleChrome -->
+    <test name="Firefox" duration-ms="124684" started-at="2018-05-15T12:45:48Z" finished-at="2018-05-15T12:47:52Z">
+      <class name="testng.HomePageTest">
+        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:testng.HomePageTest@610694f1]" name="setup" is-config="true" duration-ms="27485" started-at="2018-05-15T12:46:27Z" finished-at="2018-05-15T12:46:54Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="verifyHomePageAvailiablity()[pri:0, instance:testng.HomePageTest@610694f1]" name="verifyHomePageAvailiablity" duration-ms="14406" started-at="2018-05-15T12:46:54Z" finished-at="2018-05-15T12:47:09Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyHomePageAvailiablity -->
-        <test-method status="PASS" signature="kill()[pri:0, instance:testng.HomePageTest@5abca1e0]" name="kill" is-config="true" duration-ms="15" started-at="2018-05-07T10:06:57Z" finished-at="2018-05-07T10:06:57Z">
+        <test-method status="PASS" signature="kill()[pri:0, instance:testng.HomePageTest@610694f1]" name="kill" is-config="true" duration-ms="7550" started-at="2018-05-15T12:47:09Z" finished-at="2018-05-15T12:47:16Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- kill -->
       </class> <!-- testng.HomePageTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      <class name="testng.ChallengingDomPageTest">
+        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:testng.ChallengingDomPageTest@23e028a9]" name="setup" is-config="true" duration-ms="19207" started-at="2018-05-15T12:45:48Z" finished-at="2018-05-15T12:46:07Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:testng.CheckboxesPageTest@3dd4520b]" name="setup" is-config="true" duration-ms="10184" started-at="2018-05-15T12:46:07Z" finished-at="2018-05-15T12:46:17Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:testng.DropDownPageTest@5ae63ade]" name="setup" is-config="true" duration-ms="9953" started-at="2018-05-15T12:46:17Z" finished-at="2018-05-15T12:46:27Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="verifyButtonsAvailiablity()[pri:0, instance:testng.ChallengingDomPageTest@23e028a9]" name="verifyButtonsAvailiablity" duration-ms="8519" started-at="2018-05-15T12:47:16Z" finished-at="2018-05-15T12:47:25Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyButtonsAvailiablity -->
+        <test-method status="PASS" signature="verifyCanvasAvailiablity()[pri:0, instance:testng.ChallengingDomPageTest@23e028a9]" name="verifyCanvasAvailiablity" duration-ms="177" started-at="2018-05-15T12:47:25Z" finished-at="2018-05-15T12:47:25Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCanvasAvailiablity -->
+        <test-method status="PASS" signature="kill()[pri:0, instance:testng.ChallengingDomPageTest@23e028a9]" name="kill" is-config="true" duration-ms="3052" started-at="2018-05-15T12:47:43Z" finished-at="2018-05-15T12:47:46Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- kill -->
+        <test-method status="PASS" signature="kill()[pri:0, instance:testng.CheckboxesPageTest@3dd4520b]" name="kill" is-config="true" duration-ms="3063" started-at="2018-05-15T12:47:46Z" finished-at="2018-05-15T12:47:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- kill -->
+        <test-method status="PASS" signature="kill()[pri:0, instance:testng.DropDownPageTest@5ae63ade]" name="kill" is-config="true" duration-ms="3098" started-at="2018-05-15T12:47:49Z" finished-at="2018-05-15T12:47:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- kill -->
+      </class> <!-- testng.ChallengingDomPageTest -->
+      <class name="testng.DisappearingElementsPageTest">
+        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:testng.DisappearingElementsPageTest@3701eaf6]" name="setup" is-config="true" duration-ms="11758" started-at="2018-05-15T12:47:21Z" finished-at="2018-05-15T12:47:32Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="FAIL" signature="verifyBasicAuthLogin()[pri:0, instance:testng.DisappearingElementsPageTest@3701eaf6]" name="verifyBasicAuthLogin" duration-ms="6370" started-at="2018-05-15T12:47:32Z" finished-at="2018-05-15T12:47:39Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [5] but found [4]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [5] but found [4]
+at org.testng.Assert.fail(Assert.java:96)
+at org.testng.Assert.failNotEquals(Assert.java:776)
+at org.testng.Assert.assertEqualsImpl(Assert.java:137)
+at org.testng.Assert.assertEquals(Assert.java:118)
+at org.testng.Assert.assertEquals(Assert.java:652)
+at org.testng.Assert.assertEquals(Assert.java:662)
+at testng.DisappearingElementsPageTest.verifyBasicAuthLogin(DisappearingElementsPageTest.java:36)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+at java.lang.Thread.run(Thread.java:745)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyBasicAuthLogin -->
+        <test-method status="PASS" signature="kill()[pri:0, instance:testng.DisappearingElementsPageTest@3701eaf6]" name="kill" is-config="true" duration-ms="4246" started-at="2018-05-15T12:47:39Z" finished-at="2018-05-15T12:47:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- kill -->
+      </class> <!-- testng.DisappearingElementsPageTest -->
+      <class name="testng.BasicAuthTest">
+        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:testng.BasicAuthTest@43814d18]" name="setup" is-config="true" duration-ms="29575" started-at="2018-05-15T12:46:27Z" finished-at="2018-05-15T12:46:56Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="verifyBasicAuthLogin()[pri:0, instance:testng.BasicAuthTest@43814d18]" name="verifyBasicAuthLogin" duration-ms="18121" started-at="2018-05-15T12:46:56Z" finished-at="2018-05-15T12:47:15Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyBasicAuthLogin -->
+        <test-method status="PASS" signature="kill()[pri:0, instance:testng.BasicAuthTest@43814d18]" name="kill" is-config="true" duration-ms="3975" started-at="2018-05-15T12:47:15Z" finished-at="2018-05-15T12:47:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- kill -->
+      </class> <!-- testng.BasicAuthTest -->
+      <class name="testng.DropDownPageTest">
+        <test-method status="PASS" signature="verifyDropDownPageAvailiablity()[pri:0, instance:testng.DropDownPageTest@5ae63ade]" name="verifyDropDownPageAvailiablity" duration-ms="5424" started-at="2018-05-15T12:47:25Z" finished-at="2018-05-15T12:47:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyDropDownPageAvailiablity -->
+        <test-method status="PASS" signature="verifyGetDropDownOptions()[pri:0, instance:testng.DropDownPageTest@5ae63ade]" name="verifyGetDropDownOptions" duration-ms="355" started-at="2018-05-15T12:47:30Z" finished-at="2018-05-15T12:47:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyGetDropDownOptions -->
+      </class> <!-- testng.DropDownPageTest -->
+      <class name="testng.CheckboxesPageTest">
+        <test-method status="PASS" signature="verifyCheckAllCheckboxes()[pri:0, instance:testng.CheckboxesPageTest@3dd4520b]" name="verifyCheckAllCheckboxes" duration-ms="6076" started-at="2018-05-15T12:47:19Z" finished-at="2018-05-15T12:47:25Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCheckAllCheckboxes -->
+        <test-method status="PASS" signature="verifyUncheckAllCheckboxes()[pri:0, instance:testng.CheckboxesPageTest@3dd4520b]" name="verifyUncheckAllCheckboxes" duration-ms="628" started-at="2018-05-15T12:47:25Z" finished-at="2018-05-15T12:47:25Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyUncheckAllCheckboxes -->
+      </class> <!-- testng.CheckboxesPageTest -->
+      <class name="testng.BrokenImagesTest">
+        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:testng.BrokenImagesTest@5c5a1b69]" name="setup" is-config="true" duration-ms="30419" started-at="2018-05-15T12:46:27Z" finished-at="2018-05-15T12:46:57Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="verifyBrokenImagaes()[pri:0, instance:testng.BrokenImagesTest@5c5a1b69]" name="verifyBrokenImagaes" duration-ms="19479" started-at="2018-05-15T12:46:57Z" finished-at="2018-05-15T12:47:17Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyBrokenImagaes -->
+        <test-method status="PASS" signature="kill()[pri:0, instance:testng.BrokenImagesTest@5c5a1b69]" name="kill" is-config="true" duration-ms="3854" started-at="2018-05-15T12:47:17Z" finished-at="2018-05-15T12:47:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- kill -->
+      </class> <!-- testng.BrokenImagesTest -->
+    </test> <!-- Firefox -->
+  </suite> <!-- Multiple Browser -->
 </testng-results>
