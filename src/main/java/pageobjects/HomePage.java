@@ -28,13 +28,19 @@ public class HomePage {
 	@FindBy(xpath = "//*[@id='content']/h1")
 	WebElement headerName;
 
+	@FindBy(linkText = "Exit Intent")
+	WebElement exitIntentElement;
+
+	public WebElement getExitIntentElement() {
+		return exitIntentElement;
+	}
+
 	@FindBy(linkText = "Basic Auth")
 	WebElement basicAuthElemment;
 
 	@FindBy(linkText = "Broken Images")
 	WebElement brokenImagesLinkElement;
-	
-	
+
 	public WebElement getBrokenImagesLinkElement() {
 		return brokenImagesLinkElement;
 	}
@@ -42,14 +48,13 @@ public class HomePage {
 	public WebElement getChallengingDomLinkElement() {
 		return challengingDomLinkElement;
 	}
-	
+
 	@FindBy(linkText = "Checkboxes")
 	WebElement checkboxesLinkElement;
-	
+
 	@FindBy(linkText = "Disappearing Elements")
 	WebElement disappearingElements;
-	
-	
+
 	public WebElement getDisappearingElements() {
 		return disappearingElements;
 	}
@@ -60,14 +65,13 @@ public class HomePage {
 
 	@FindBy(linkText = "Challenging DOM")
 	WebElement challengingDomLinkElement;
-	
+
 	@FindBy(linkText = "Drag and Drop")
 	WebElement dragNDrop;
-	
+
 	@FindBy(linkText = "Dropdown")
 	WebElement dropdownLinkElement;
-		
-	
+
 	public WebElement getDragNDrop() {
 		return dragNDrop;
 	}
@@ -101,12 +105,11 @@ public class HomePage {
 		newBrowser.setDriver(driver);
 		return headerName.getText();
 	}
-	
+
 	public MyBrowserManager fetchBrowser() {
 		return newBrowser;
 	}
 
-	
 	public void performBasicAuthLogin() {
 		newBrowser = new MyBrowserManager();
 		String newBasicAuthUrl = null;
@@ -137,7 +140,7 @@ public class HomePage {
 			log.error("linkTextElementOnHomePage not found." + enve.getMessage());
 		} catch (TimeoutException te) {
 			log.error("TimeoutException found." + te.getMessage());
-		}catch (Exception e) {
+		} catch (Exception e) {
 			log.error("Exception found" + e.getMessage());
 		}
 	}
